@@ -11,4 +11,5 @@ echo "building the docker image..."
         sh 'docker build -t c0ntrl08/module8-java-maven-app-for-dockerinjenkins:jma-3.1 .'
         sh 'echo $PASS | docker login -u $USER --password-stdin'
         sh 'docker push c0ntrl08/module8-java-maven-app-for-dockerinjenkins:jma-3.1'
+    }
 }
