@@ -7,8 +7,8 @@ def call(String imageName) {
 
 def buildImage() {
 echo "building the docker image..."
-    withCredentials([usernamePassword(credentialsId: 'docker-hub-repo', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-        sh 'docker build -t nanatwn/demo-app:jma-2.0 .'
+    withCredentials([usernamePassword(credentialsId: 'dockerhub-c0ntrl08', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+        sh 'docker build -t c0ntrl08/module8-java-maven-app-for-dockerinjenkins:jma-3.1 .'
         sh 'echo $PASS | docker login -u $USER --password-stdin'
-        sh 'docker push nanatwn/demo-app:jma-2.0'
+        sh 'docker push c0ntrl08/module8-java-maven-app-for-dockerinjenkins:jma-3.1'
 }
